@@ -59,7 +59,7 @@ namespace didaticos.redimensionador
                     fileStream = new FileStream(arquivo, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
                     fileInfo = new FileInfo(arquivo);
 
-                    string caminho = Environment.CurrentDirectory + @"\" + arquivo_redimensionado + @"\" + fileInfo.Name + DateTime.Now.Millisecond.ToString();
+                    string caminho = Environment.CurrentDirectory + @"\" + arquivo_redimensionado + @"\" + DateTime.Now.Millisecond.ToString() + "_" + fileInfo.Name;
 
                     //Redimensiona - //copia os arquivos redimensionados para a pasta de Arquivos_Redimensionados
                     Redimensionador(Image.FromStream(fileStream), tamanho, caminho);
